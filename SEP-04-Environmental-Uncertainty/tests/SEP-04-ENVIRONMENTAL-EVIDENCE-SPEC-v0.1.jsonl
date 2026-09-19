@@ -1,0 +1,10 @@
+{"constraint_id":"EU-PRESENCE-001","rule":{"op":"not","arg":{"fact":"required_observation_present"}}}
+{"constraint_id":"EU-FRESHNESS-001","rule":{"op":"gt","left":{"fact":"observation_age"},"right":{"fact":"maximum_allowed_observation_age"}}}
+{"constraint_id":"EU-CONSISTENCY-001","rule":{"op":"not","arg":{"fact":"observations_consistent"}}}
+{"constraint_id":"EU-SUFFICIENCY-001","rule":{"op":"lt","left":{"fact":"available_evidence_count"},"right":{"fact":"required_evidence_count"}}}
+{"constraint_id":"EU-BINDING-001","rule":{"op":"ne","left":{"fact":"observed_environment_id"},"right":{"fact":"required_environment_id"}}}
+{"constraint_id":"EU-EPOCH-001","rule":{"op":"ne","left":{"fact":"observation_epoch"},"right":{"fact":"required_execution_epoch"}}}
+{"constraint_id":"EU-PROVENANCE-001","rule":{"op":"not","arg":{"fact":"source_provenance_established"}}}
+{"constraint_id":"EU-MEASUREMENT-001","rule":{"op":"not","arg":{"fact":"measurement_validity_established"}}}
+{"constraint_id":"EU-CONTROL-001","rule":{"op":"or","args":[{"op":"not","arg":{"fact":"required_observation_present"}},{"op":"gt","left":{"fact":"observation_age"},"right":{"fact":"maximum_allowed_observation_age"}},{"op":"not","arg":{"fact":"observations_consistent"}},{"op":"ne","left":{"fact":"observed_environment_id"},"right":{"fact":"required_environment_id"}},{"op":"not","arg":{"fact":"source_provenance_established"}},{"op":"not","arg":{"fact":"measurement_validity_established"}}]}}
+{"constraint_id":"EU-CONTROL-002","rule":{"op":"or","args":[{"op":"lt","left":{"fact":"available_evidence_count"},"right":{"fact":"required_evidence_count"}},{"op":"not","arg":{"fact":"observations_consistent"}},{"op":"gt","left":{"fact":"observation_age"},"right":{"fact":"maximum_allowed_observation_age"}},{"op":"ne","left":{"fact":"observed_environment_id"},"right":{"fact":"required_environment_id"}},{"op":"ne","left":{"fact":"observation_epoch"},"right":{"fact":"required_execution_epoch"}},{"op":"not","arg":{"fact":"source_provenance_established"}},{"op":"not","arg":{"fact":"measurement_validity_established"}}]}}
