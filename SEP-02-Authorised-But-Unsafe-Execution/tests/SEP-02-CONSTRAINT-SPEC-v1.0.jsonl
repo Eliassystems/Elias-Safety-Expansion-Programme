@@ -1,0 +1,10 @@
+{"constraint_id":"CC-DIGITAL-001","rule":{"op":"lt","left":{"op":"sub","left":{"fact":"healthy_copy_count_before"},"right":{"fact":"copies_destroyed_by_action"}},"right":{"fact":"minimum_healthy_copy_count"}}}
+{"constraint_id":"CC-PRIVACY-001","rule":{"op":"gt","left":{"fact":"unrelated_protected_field_count"},"right":{"literal":0}}}
+{"constraint_id":"CC-FINANCIAL-001","rule":{"op":"gt","left":{"fact":"requested_amount"},"right":{"fact":"per_event_limit"}}}
+{"constraint_id":"CC-INFORMATION-001","rule":{"op":"and","args":[{"fact":"known_material_uncertainty"},{"op":"not","arg":{"fact":"material_uncertainty_disclosed"}}]}}
+{"constraint_id":"CC-CONTINUITY-001","rule":{"op":"lt","left":{"op":"sub","left":{"fact":"healthy_instance_count_before"},"right":{"fact":"healthy_instances_shutdown"}},"right":{"fact":"minimum_healthy_instances_required"}}}
+{"constraint_id":"CC-COMPOSITION-001","rule":{"op":"and","args":[{"op":"gt","left":{"op":"add","args":[{"fact":"baseline_load"},{"fact":"action_a_load"},{"fact":"action_b_load"}]},"right":{"fact":"safe_max_load"}},{"op":"le","left":{"op":"add","args":[{"fact":"baseline_load"},{"fact":"action_a_load"}]},"right":{"fact":"safe_max_load"}},{"op":"le","left":{"op":"add","args":[{"fact":"baseline_load"},{"fact":"action_b_load"}]},"right":{"fact":"safe_max_load"}}]}}
+{"constraint_id":"CC-HUMAN-ERROR-001","rule":{"op":"and","args":[{"op":"gt","left":{"fact":"requested_scope_count"},"right":{"fact":"stated_objective_scope_count"}},{"op":"le","left":{"fact":"requested_scope_count"},"right":{"fact":"authorised_scope_count"}}]}}
+{"constraint_id":"CC-RECOVERY-001","rule":{"op":"and","args":[{"fact":"destructive_action"},{"op":"not","arg":{"fact":"rollback_available"}}]}}
+{"constraint_id":"CC-CONTROL-001","rule":{"op":"or","args":[{"op":"not","arg":{"fact":"current_state_verified"}},{"op":"not","arg":{"fact":"rollback_available"}}]}}
+{"constraint_id":"CC-CONTROL-002","rule":{"op":"or","args":[{"op":"not","arg":{"fact":"purpose_required_only"}},{"fact":"sensitive_data_present"},{"op":"not","arg":{"fact":"recipient_approved"}}]}}
